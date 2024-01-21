@@ -1,7 +1,7 @@
 # Dockerfile for app2
 FROM tensorflow/tensorflow:latest-gpu
 WORKDIR /app
-RUN pip install flask
+RUN pip install --ignore-installed flask
 COPY app2.py .
 EXPOSE 8081
 CMD ["python", "app2.py"]
