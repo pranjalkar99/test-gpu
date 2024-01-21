@@ -1,0 +1,28 @@
+version: '3.8'
+
+services:
+  app1:
+    build:
+      context: ./app1
+    ports:
+      - "8080:8080"
+    environment:
+      - NVIDIA_VISIBLE_DEVICES=all
+      - NVIDIA_DRIVER_CAPABILITIES=compute,utility
+    runtime: nvidia
+
+  app2:
+    build:
+      context: ./app2
+    ports:
+      - "8081:8081"
+    environment:
+      - NVIDIA_VISIBLE_DEVICES=all
+      - NVIDIA_DRIVER_CAPABILITIES=compute,utility
+    runtime: nvidia
+
+  app3:
+    build:
+      context: ./app3
+    ports:
+      - "8082:8082"
